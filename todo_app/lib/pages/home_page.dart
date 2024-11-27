@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/utils/todo_list.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -20,15 +21,10 @@ class HomePage extends StatelessWidget {
         foregroundColor: Colors.white,
       ),
       body: ListView.builder(
-          itemCount: toDoList.length, 
+          itemCount: toDoList.length,
           itemBuilder: (BuildContext context, index) {
-            return Padding(
-              padding: const EdgeInsets.all(20),
-              child: Container(
-                child: Text(
-                  toDoList[index][0],
-                ),
-              ),
+            return TodoList(
+              taskName: toDoList[index][0],
             );
           }),
     );
